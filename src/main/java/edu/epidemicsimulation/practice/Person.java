@@ -46,9 +46,18 @@ public abstract class Person {
     }
 
     protected abstract double getInfectionPeriodCoefficient(); // Абстрактный метод
+    protected abstract double getInfectionRateCoefficient(); // Абстрактный метод
+    protected abstract double getMortalityRateCoefficient(); // Абстрактный метод
+    protected abstract int getInfectionDurationCoefficient(); // Абстрактный метод
 
     private int getAdjustedInfectionPeriod() {
-        return (int) (populationConfig.getInfectionDuration() * getInfectionPeriodCoefficient());
+        return (int) (populationConfig.getInfectionDuration() * getInfectionPeriodCoefficient() * getInfectionDurationCoefficient());
+    }
+    private double getAdjustedMortalityRate() {
+        return (populationConfig.getMortalityRate()  * getMortalityRateCoefficient());
+    }
+    private double getAdjustedInfectionRate() {
+        return (populationConfig.getInfectionRate() * getInfectionRateCoefficient());
     }
 
 
@@ -81,9 +90,10 @@ public abstract class Person {
         if (infectionDaysLeft > 0) {
             infectionDaysLeft--;
         } else if (healthStatus == HealthStatus.INFECTED) {
-            if (random.nextInt(101) > populationConfig.getMortalityRate()) {
+            if (random.nextInt(101) > getAdjustedMortalityRate()) {
                 healthStatus = HealthStatus.IMMUNE;
                 circle.setFill(Color.BLUE); // Цвет для иммунитета
+                immuneDaysLeft = populationConfig.getImmunityDuration();
                 if (simulationEventListener != null) {
                     simulationEventListener.onRecovery(this);
                 }
@@ -167,7 +177,7 @@ public abstract class Person {
             if (other != this && Math.abs(other.getCircle().getCenterX() - newX) < 5 && Math.abs(other.getCircle().getCenterY() - newY) < 5) {
                 // Проверка и заражение других людей с учетом вероятности
                 if (isInfected() && !other.isInfected() && !other.isImmune()) {
-                    double infectionChance = populationConfig.getInfectionRate();
+                    double infectionChance = getAdjustedInfectionRate();
                     if (random.nextDouble() < infectionChance) {
                         other.infect(); // Заражаем другого человека с учетом вероятности
                     }
@@ -175,7 +185,7 @@ public abstract class Person {
 
                 // Также проверяем обратное столкновение
                 if (!isInfected() && other.isInfected() && !isImmune()) {
-                    double infectionChance = populationConfig.getInfectionRate();
+                    double infectionChance = getAdjustedInfectionRate();
                     if (random.nextDouble() < infectionChance) {
                         infect(); // Текущий человек заражается
                     }

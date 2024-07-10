@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72cfaa15-023b-44f7-a14a-bcd2f50a0494" name="Changes" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Adult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Child.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Elderly.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/HealthStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/PopulationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/SimulationEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Utils.java" afterDir="false" />
+    <list default="true" id="72cfaa15-023b-44f7-a14a-bcd2f50a0494" name="Changes" comment="The project is almost ready">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/epidemicsimulation/practice/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Adult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Adult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Child.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Elderly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Elderly.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Population.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Population.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/PopulationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/PopulationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/Simulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/SimulationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/epidemicsimulation/practice/SimulationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/edu/epidemicsimulation/practice/simulation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/epidemicsimulation/practice/simulation.fxml" afterDir="false" />
@@ -52,20 +49,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Simulation.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Simulation.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
     ]
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -83,11 +83,31 @@
       <option name="project" value="LOCAL" />
       <updated>1718694565737</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="The project is almost ready">
+      <option name="closed" value="true" />
+      <created>1720554184446</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720554184446</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="The project is almost ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="The project is almost ready" />
   </component>
 </project>

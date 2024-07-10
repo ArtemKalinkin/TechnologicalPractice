@@ -10,7 +10,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -20,12 +19,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainPane" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #f4e1e1;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.epidemicsimulation.practice.SimulationController">
+<AnchorPane fx:id="mainPane" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #272727;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.epidemicsimulation.practice.SimulationController">
    <children>
       <Pane fx:id="simulationPane" prefHeight="680.0" prefWidth="1270.0" style="-fx-background-color: #c2c3d7;" />
-      <VBox fx:id="sidebar" layoutX="1270.0" prefHeight="900.0" prefWidth="330.0" style="-fx-background-color: #c1d6ce;">
+      <VBox fx:id="sidebar" layoutX="1270.0" prefHeight="900.0" prefWidth="330.0" style="-fx-background-color: #272727;">
          <children>
-            <Label fx:id="infoLabel" alignment="CENTER" prefHeight="45.0" prefWidth="460.0" text="Общая информация">
+            <Label fx:id="infoLabel" alignment="CENTER" prefHeight="45.0" prefWidth="460.0" text="Общая информация" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -43,7 +42,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="totalPeopleLabel" prefHeight="20.0" prefWidth="179.0" text="Общее количество людей:">
+                  <Label fx:id="totalPeopleLabel" prefHeight="20.0" prefWidth="179.0" text="Общее количество людей:" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -51,7 +50,7 @@
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label fx:id="healthyLabel" prefHeight="20.0" prefWidth="172.0" text="Здоровые:" GridPane.rowIndex="1">
+                  <Label fx:id="healthyLabel" prefHeight="20.0" prefWidth="172.0" text="Здоровые:" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -59,7 +58,7 @@
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label fx:id="infectedLabel" prefHeight="20.0" prefWidth="179.0" text="Зараженные:" GridPane.rowIndex="2">
+                  <Label fx:id="infectedLabel" prefHeight="20.0" prefWidth="179.0" text="Зараженные:" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -67,7 +66,7 @@
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label fx:id="recoveredLabel" layoutY="30.0" prefHeight="20.0" prefWidth="179.0" text="Выздоровевшие:" GridPane.rowIndex="3">
+                  <Label fx:id="recoveredLabel" layoutY="30.0" prefHeight="20.0" prefWidth="179.0" text="Выздоровевшие:" textFill="WHITE" GridPane.rowIndex="3">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -75,7 +74,7 @@
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label fx:id="deceasedLabel" prefHeight="20.0" prefWidth="179.0" text="Умершие:" GridPane.rowIndex="4">
+                  <Label fx:id="deceasedLabel" prefHeight="20.0" prefWidth="179.0" text="Умершие:" textFill="WHITE" GridPane.rowIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -86,41 +85,41 @@
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label fx:id="healthyCountLabel" prefHeight="20.0" prefWidth="137.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="healthyCountLabel" prefHeight="20.0" prefWidth="137.0" text="-" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="totalPeopleCountLabel" prefHeight="20.0" prefWidth="131.0" text="-" GridPane.columnIndex="1">
+                  <Label fx:id="totalPeopleCountLabel" prefHeight="20.0" prefWidth="131.0" text="-" textFill="WHITE" GridPane.columnIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="infectedCountLabel" prefHeight="20.0" prefWidth="179.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="infectedCountLabel" prefHeight="20.0" prefWidth="179.0" text="-" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="recoveredCountLabel" prefHeight="20.0" prefWidth="179.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Label fx:id="recoveredCountLabel" prefHeight="20.0" prefWidth="179.0" text="-" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="deceasedCountLabel" prefHeight="20.0" prefWidth="179.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Label fx:id="deceasedCountLabel" prefHeight="20.0" prefWidth="179.0" text="-" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                </children>
             </GridPane>
-            <Label fx:id="paramsLabel" alignment="CENTER" prefHeight="45.0" prefWidth="377.0" text="Изменяемые параметры">
+            <Label fx:id="paramsLabel" alignment="CENTER" prefHeight="45.0" prefWidth="377.0" text="Изменяемые параметры" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
             <Pane fx:id="paramsPane" prefHeight="460.0" prefWidth="330.0">
                <children>
-                  <Label fx:id="mortalityRateLabel" layoutY="5.0" prefHeight="28.0" prefWidth="156.0" text="Уровень смертности">
+                  <Label fx:id="mortalityRateLabel" layoutY="5.0" prefHeight="28.0" prefWidth="156.0" text="Уровень смертности" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -133,7 +132,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Slider>
-                  <Label fx:id="infectionRateLabel" layoutY="45.0" prefHeight="28.0" prefWidth="185.0" text="Вероятность заражения">
+                  <Label fx:id="infectionRateLabel" layoutY="45.0" prefHeight="28.0" prefWidth="185.0" text="Вероятность заражения" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -146,7 +145,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Slider>
-                  <Label fx:id="infectionDurationLabel" layoutY="85.0" prefHeight="28.0" prefWidth="185.0" text="Длительность инфекции">
+                  <Label fx:id="infectionDurationLabel" layoutY="85.0" prefHeight="28.0" prefWidth="185.0" text="Длительность инфекции" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -159,7 +158,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Slider>
-                  <Label fx:id="immunityDurationLabel" layoutY="125.0" prefHeight="28.0" prefWidth="200.0" text="Длительность иммунитета">
+                  <Label fx:id="immunityDurationLabel" layoutY="125.0" prefHeight="28.0" prefWidth="200.0" text="Длительность иммунитета" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -172,16 +171,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Slider>
-                  <Label fx:id="virusNameLabel" layoutY="366.0" prefHeight="40.0" prefWidth="138.0" text="Название вируса:">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </Label>
-                  <TextField fx:id="virusNameTextField" layoutX="138.0" layoutY="374.0" prefHeight="25.0" prefWidth="150.0" />
-                  <Label fx:id="peopleLabel" layoutY="165.0" prefHeight="28.0" prefWidth="156.0" text="Количество людей">
+                  <Label fx:id="peopleLabel" layoutY="165.0" prefHeight="28.0" prefWidth="156.0" text="Количество людей" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -194,22 +184,22 @@
                         <Insets left="20.0" />
                      </padding>
                   </Slider>
-                  <CheckBox fx:id="childrenCheckBox" disable="true" layoutY="265.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Дети">
+                  <CheckBox fx:id="childrenCheckBox" disable="true" layoutY="265.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Дети" textFill="WHITE">
                      <padding>
                         <Insets left="20.0" />
                      </padding>
                   </CheckBox>
-                  <CheckBox fx:id="adultsCheckBox" disable="true" layoutY="290.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Взрослые">
+                  <CheckBox fx:id="adultsCheckBox" disable="true" layoutY="290.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Взрослые" textFill="WHITE">
                      <padding>
                         <Insets left="20.0" />
                      </padding>
                   </CheckBox>
-                  <CheckBox fx:id="elderlyCheckBox" disable="true" layoutY="315.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Пожилые">
+                  <CheckBox fx:id="elderlyCheckBox" disable="true" layoutY="315.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Пожилые" textFill="WHITE">
                      <padding>
                         <Insets left="20.0" />
                      </padding>
                   </CheckBox>
-                  <CheckBox fx:id="vulnerableAgeGroupsCheckBox" layoutY="230.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="240.0" text="Уязвимые возрастные группы">
+                  <CheckBox fx:id="vulnerableAgeGroupsCheckBox" layoutY="230.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="240.0" text="Уязвимые возрастные группы" textFill="WHITE">
                      <padding>
                         <Insets left="20.0" />
                      </padding>
@@ -217,7 +207,7 @@
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
-                  <Label fx:id="numberImmunityDurationLabel" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="125.0" prefHeight="28.0" prefWidth="80.0">
+                  <Label fx:id="numberImmunityDurationLabel" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="125.0" prefHeight="28.0" prefWidth="80.0" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -225,7 +215,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="numberInfectionDurationLabel" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="87.0" prefHeight="28.0" prefWidth="80.0">
+                  <Label fx:id="numberInfectionDurationLabel" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="87.0" prefHeight="28.0" prefWidth="80.0" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -233,7 +223,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="numberPeopleLabel" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="166.0" prefHeight="28.0" prefWidth="80.0">
+                  <Label fx:id="numberPeopleLabel" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="166.0" prefHeight="28.0" prefWidth="80.0" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -241,7 +231,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="numberInfectionRateLabel" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="46.0" prefHeight="28.0" prefWidth="80.0">
+                  <Label fx:id="numberInfectionRateLabel" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="46.0" prefHeight="28.0" prefWidth="80.0" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -249,7 +239,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="numberMortalityRateLabel" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="6.0" prefHeight="28.0" prefWidth="80.0">
+                  <Label fx:id="numberMortalityRateLabel" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="6.0" prefHeight="28.0" prefWidth="80.0" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -274,7 +264,7 @@
                         <Insets right="20.0" />
                      </padding>
                   </ButtonBar>
-                  <Label fx:id="startTimeLabel" layoutY="23.0" prefHeight="40.0" prefWidth="200.0" text="Время начала: --:--:--">
+                  <Label fx:id="startTimeLabel" layoutY="23.0" prefHeight="40.0" prefWidth="200.0" text="Время начала: --:--:--" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -282,7 +272,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="elapsedTimeLabel" layoutY="63.0" prefHeight="40.0" prefWidth="297.0" text="Прошедшее время: 00:00:00">
+                  <Label fx:id="elapsedTimeLabel" layoutY="63.0" prefHeight="40.0" prefWidth="297.0" text="Прошедшее время: 00:00:00" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -297,19 +287,19 @@
             </Pane>
          </children>
       </VBox>
-      <HBox fx:id="BottomHBox" layoutY="680.0" style="-fx-background-color: #f4e1e1;">
+      <HBox fx:id="BottomHBox" layoutY="680.0" style="-fx-background-color: #272727;">
          <children>
-            <StackedAreaChart fx:id="stackedAreaChart" cache="true" prefHeight="220.0" prefWidth="635.0">
+            <StackedAreaChart fx:id="stackedAreaChart" cache="true" prefHeight="220.0" prefWidth="635.0" stylesheets="@styles.css">
               <xAxis>
-                <NumberAxis label="Время" minorTickVisible="false" side="BOTTOM" tickLabelsVisible="false" fx:id="xAxis" />
+                <NumberAxis label="Время" minorTickVisible="false" side="BOTTOM" tickLabelFill="WHITE" tickLabelsVisible="false" fx:id="xAxis" />
               </xAxis>
               <yAxis>
-                <NumberAxis fx:id="yAxis" label="Люди" minorTickVisible="false" side="LEFT" tickLabelsVisible="false" />
+                <NumberAxis fx:id="yAxis" label="Люди" minorTickVisible="false" side="LEFT" stylesheets="@styles.css" tickLabelFill="WHITE" tickLabelsVisible="false" />
               </yAxis>
             </StackedAreaChart>
-            <VBox fx:id="consoleVBox" prefHeight="220.0">
+            <VBox fx:id="consoleVBox" prefHeight="220.0" style="-fx-background-color: #272727;">
                <children>
-                  <Label fx:id="consoleLabel" prefHeight="20.0" prefWidth="630.0" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Console">
+                  <Label fx:id="consoleLabel" prefHeight="20.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="Console" textFill="#5b9dff">
                      <font>
                         <Font size="14.0" />
                      </font>

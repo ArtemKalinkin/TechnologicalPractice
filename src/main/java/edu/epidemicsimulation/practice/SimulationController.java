@@ -3,6 +3,7 @@ package edu.epidemicsimulation.practice;
 import javafx.fxml.FXML;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.StackedAreaChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -140,7 +141,7 @@ public class SimulationController{
     private Pane simulationPane;
 
     @FXML
-    private StackedAreaChart<?, ?> stackedAreaChart;
+    private StackedAreaChart<Number, Number> stackedAreaChart;
 
     @FXML
     private Button startButton;
@@ -203,6 +204,11 @@ public class SimulationController{
         }
     };
 
+    private XYChart.Series<Number, Number> infectedSeries = new XYChart.Series<>();
+    private XYChart.Series<Number, Number> recoveredSeries = new XYChart.Series<>();
+    private XYChart.Series<Number, Number> deceasedSeries = new XYChart.Series<>();
+    private int timeElapsed = 0;
+
 
     @FXML
     public void initialize() {
@@ -264,14 +270,41 @@ public class SimulationController{
             totalPeopleCountLabel.setText(String.format("%d", newVal.intValue()));
         });
 
-        virusNameTextField.textProperty().addListener((obs, oldVal, newVal) -> {
-            populationConfig.setVirusName(newVal);
+
+        childrenCheckBox.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+            if (isSelected) {
+                populationConfig.setChildrenIncreasedRisk(true);
+            } else {
+                populationConfig.setChildrenIncreasedRisk(false);
+            }
+        });
+
+        adultsCheckBox.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+            if (isSelected) {
+                populationConfig.setAdultsIncreasedRisk(true);
+            } else {
+                populationConfig.setAdultsIncreasedRisk(false);
+            }
+        });
+
+        elderlyCheckBox.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+            if (isSelected) {
+                populationConfig.setElderlyIncreasedRisk(true);
+            } else {
+                populationConfig.setElderlyIncreasedRisk(false);
+            }
         });
 
         vulnerableAgeGroupsCheckBox.selectedProperty().addListener((obs, oldVal, newVal) -> {
             childrenCheckBox.setDisable(!newVal);
             adultsCheckBox.setDisable(!newVal);
             elderlyCheckBox.setDisable(!newVal);
+
+            if (!newVal) {
+                childrenCheckBox.setSelected(false);
+                adultsCheckBox.setSelected(false);
+                elderlyCheckBox.setSelected(false);
+            }
         });
 
         // Добавление обработчиков событий для кнопок
@@ -290,6 +323,14 @@ public class SimulationController{
         // Инициализация кнопок
         stopButton.setDisable(true); // Стоп-кнопка неактивна при запуске
         isRunning = false;
+
+        // Инициализация серий графика
+        infectedSeries.setName("Зараженные");
+        recoveredSeries.setName("Выздоровевшие");
+        deceasedSeries.setName("Умершие");
+
+        // Добавление серий в график
+        stackedAreaChart.getData().addAll(infectedSeries, recoveredSeries, deceasedSeries);
     }
 
 
@@ -306,6 +347,7 @@ public class SimulationController{
 
 
     private void startSimulation() {
+        consoleTextArea.appendText(populationConfig.toString());
         consoleTextArea.appendText("День 0:\n");
         // Создание и запуск таймера для движения
         simulationTimeline = new Timeline(new KeyFrame(Duration.millis(15), e -> updateSimulation()));
@@ -329,6 +371,7 @@ public class SimulationController{
         infectedCountLabel.setText("0");
         recoveredCountLabel.setText("0");
         deceasedCountLabel.setText("0");
+
     }
 
     private void toggleSimulation() {
@@ -378,6 +421,16 @@ public class SimulationController{
         infectedCountLabel.setText("-");
         recoveredCountLabel.setText("-");
         deceasedCountLabel.setText("-");
+
+        // Сброс графика
+        infectedSeries.getData().clear();
+        recoveredSeries.getData().clear();
+        deceasedSeries.getData().clear();
+
+        xAxis.setLowerBound(0);
+        xAxis.setUpperBound(100);
+        yAxis.setLowerBound(0);
+        yAxis.setUpperBound(100);
     }
 
     private void pauseSimulation() {
@@ -441,5 +494,11 @@ public class SimulationController{
         infectedCountLabel.setText(String.valueOf(infectedCount));
         recoveredCountLabel.setText(String.valueOf(recoveredCount));
         deceasedCountLabel.setText(String.valueOf(deadCount));
+
+        // Обновление графика
+        timeElapsed++;
+        infectedSeries.getData().add(new XYChart.Data<>(timeElapsed, infectedCount));
+        recoveredSeries.getData().add(new XYChart.Data<>(timeElapsed, recoveredCount));
+        deceasedSeries.getData().add(new XYChart.Data<>(timeElapsed, deadCount));
     }
 }

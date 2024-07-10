@@ -1,0 +1,23 @@
+.default-color0.chart-area-symbol { -fx-background-color: #ff0000, white; } /* Красный цвет для точек зараженных */
+.default-color1.chart-area-symbol { -fx-background-color: #0000ff, white; } /* Зеленый цвет для точек выздоровевших */
+.default-color2.chart-area-symbol { -fx-background-color: #000000, white; } /* Синий цвет для точек умерших */
+
+.default-color0.chart-series-area-line { -fx-stroke: #ff0000; } /* Красный цвет для линии зараженных */
+.default-color1.chart-series-area-line { -fx-stroke: #0000ff; } /* Синий цвет для линии выздоровевших */
+.default-color2.chart-series-area-line { -fx-stroke: #000000; } /* Черный цвет для линии умерших */
+
+.chart-series-area-fill.series0 {
+    -fx-fill: #ffcccc; /* Светло-красный цвет для области зараженных */
+}
+
+.chart-series-area-fill.series1 {
+    -fx-fill: #ccccff; /* Светло-синий цвет для области выздоровевших */
+}
+
+.chart-series-area-fill.series2 {
+    -fx-fill: #999999; /* Светло-серый цвет для области умерших */
+}
+
+.axis-label {
+    -fx-text-fill: white;
+}

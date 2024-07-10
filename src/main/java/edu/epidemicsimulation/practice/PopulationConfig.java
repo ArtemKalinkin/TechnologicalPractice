@@ -6,13 +6,15 @@ public class PopulationConfig {
     private int childrenPercentage;
     private int adultsPercentage;
     private int elderlyPercentage;
-    private int mortalityRate = 30;
-    private double infectionRate = 1.0;
+    private int mortalityRate = 3;
+    private double infectionRate = 0.5;
     private int infectionDuration = 10;
     private int immunityDuration = 365;
     private int numberOfPeople = 500;
     private int incubationPeriod = 2;
-    private String virusName;
+    private boolean childrenIncreasedRisk;
+    private boolean adultsIncreasedRisk;
+    private boolean elderlyIncreasedRisk;
 
 
     public void setIncubationPeriod(int incubationPeriod) {
@@ -47,9 +49,6 @@ public class PopulationConfig {
         this.immunityDuration = immunityDuration;
     }
 
-    public void setVirusName(String virusName) {
-        this.virusName = virusName;
-    }
 
     public double getMortalityRate() {
         return mortalityRate;
@@ -67,9 +66,6 @@ public class PopulationConfig {
         return immunityDuration;
     }
 
-    public String getVirusName() {
-        return virusName;
-    }
 
     public PopulationConfig() {
         setRandomAgeGroupPercentages();
@@ -94,9 +90,33 @@ public class PopulationConfig {
         return elderlyPercentage;
     }
 
+    public boolean isChildrenIncreasedRisk() {
+        return childrenIncreasedRisk;
+    }
+
+    public void setChildrenIncreasedRisk(boolean childrenIncreasedRisk) {
+        this.childrenIncreasedRisk = childrenIncreasedRisk;
+    }
+
+    public boolean isAdultsIncreasedRisk() {
+        return adultsIncreasedRisk;
+    }
+
+    public void setAdultsIncreasedRisk(boolean adultsIncreasedRisk) {
+        this.adultsIncreasedRisk = adultsIncreasedRisk;
+    }
+
+    public boolean isElderlyIncreasedRisk() {
+        return elderlyIncreasedRisk;
+    }
+
+    public void setElderlyIncreasedRisk(boolean elderlyIncreasedRisk) {
+        this.elderlyIncreasedRisk = elderlyIncreasedRisk;
+    }
+
     @Override
     public String toString() {
-        return String.format("Children: %d%%, Adults: %d%%, Elderly: %d%%",
+        return String.format("Дети: %d%%, Взрослые: %d%%, Пожилые: %d%%\n",
                 childrenPercentage, adultsPercentage, elderlyPercentage);
     }
 }
